@@ -76,6 +76,7 @@ const story = {
     defaultDestination: 'attack',
     buttonText: "Let's try this again"
   }
+<<<<<<< HEAD
 }; // rewrite story
 
 const startButton = document.getElementById('startGameButton');
@@ -93,10 +94,30 @@ const initGame = () => {
   } else {
     // if this is missing a wild undefiend appears
     image = '';
+=======
+} // rewrite story
+
+const startButton = document.getElementById('startGameButton')
+
+startButton.addEventListener('click', () => {
+  initGame()
+})
+
+const initGame = () => {
+  const gameDiv = document.getElementById('game')
+
+  let image
+  if (story[story.currentScene].image) {
+    image = '<img id = "chapter_img"/>'
+  } else {
+    // if this is missing a wild undefiend appears
+    image = ''
+>>>>>>> fb46c5f6ef0cfc0e9d49d32da9c377699c37d9e8
   }
 
   // story[story.currentScene] - works a bit like an array
   gameDiv.innerHTML = `
+<<<<<<< HEAD
     <h1>${story[story.currentScene].title}</h1>
     <p>${story[story.currentScene].story}</p>
     ${renderInput(story[story.currentScene].choices)}
@@ -111,18 +132,42 @@ const initGame = () => {
 
   const button = document.getElementById('submitButton')
   button.addEventListener('click', chooseInput);
+=======
+        <h1>${story[story.currentScene].title}</h1>
+        <p>${story[story.currentScene].story}</p>
+        ${renderInput(story[story.currentScene].choices)}
+        <button id="submitButton">Next</button>
+        ${image}
+    `
+
+  if (story[story.currentScene].image) {
+    document.querySelector('#chapter_img').src =
+      'img/' + story[story.currentScene].image
+  }
+
+  const button = document.getElementById('submitButton')
+  button.addEventListener('click', chooseInput)
+>>>>>>> fb46c5f6ef0cfc0e9d49d32da9c377699c37d9e8
 }
 
 const renderInput = (choices) => {
   // choices is a array
+<<<<<<< HEAD
   if (!choices) return '';
 
   // if this is missing a wild undefiend appears
   let input = '';
+=======
+  if (!choices) return ''
+
+  // if this is missing a wild undefiend appears
+  let input = ''
+>>>>>>> fb46c5f6ef0cfc0e9d49d32da9c377699c37d9e8
 
   // 'id' from input and 'for' from label need to be the same value to 'connect' them
   for (let i = 0; i < choices.length; i++) {
     input += `
+<<<<<<< HEAD
       <div>
         <input data-destination=${choices[i].destination} type='radio' id="decision-${i}" name='decision'/>
         <label for="decision-${i}">${choices[i].value}</label>
@@ -130,6 +175,15 @@ const renderInput = (choices) => {
     `
   }
   return input;
+=======
+            <div>
+                <input data-destination=${choices[i].destination} type='radio' id="decision-${i}" name='decision'/>
+                <label for="decision-${i}">${choices[i].value}</label>
+            </div>
+        `
+  }
+  return input
+>>>>>>> fb46c5f6ef0cfc0e9d49d32da9c377699c37d9e8
 }
 
 const chooseInput = () => {
@@ -137,6 +191,7 @@ const chooseInput = () => {
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
       // the chosen input defines the next scene
+<<<<<<< HEAD
       story.currentScene = inputs[i].getAttribute('data-destination');
       initGame();
       return;
@@ -144,5 +199,14 @@ const chooseInput = () => {
   }
   // at the end of decision path - go back to start
   story.currentScene = story[story.currentScene].defaultDestination;
+=======
+      story.currentScene = inputs[i].getAttribute('data-destination')
+      initGame()
+      return
+    }
+  }
+  // at the end of decision path - go back to start
+  story.currentScene = story[story.currentScene].defaultDestination
+>>>>>>> fb46c5f6ef0cfc0e9d49d32da9c377699c37d9e8
   initGame()
 }
