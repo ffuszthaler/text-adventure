@@ -1,9 +1,9 @@
 const story = {
   currentScene: "introRoom",
   introRoom: {
-    title: "Welcome to you prison",
+    title: "Welcome to your prison",
     story:
-      "You might have already realized but you stuck here, to escape you need to make the right decision or expect consequences! Are you ready?",
+      "You might have already realized but you are stuck here, to escape you need to make the right decision or expect consequences! Are you ready?",
     choices: [
       {
         value: "Yes, I'm ready!",
@@ -14,7 +14,7 @@ const story = {
         destination: "deathRoom",
       },
     ],
-    image: "A_cabin.png",
+    image: "intro_room.png",
   },
   firstRoom: {
     title: "Welcome to the first room!",
@@ -34,7 +34,7 @@ const story = {
         destination: "deathRoom",
       },
     ],
-    image: "A_cabin.png",
+    image: "first_room.png",
   },
   secondRoom: {
     title: "Welcome to the second room!",
@@ -54,7 +54,7 @@ const story = {
         destination: "thirdRoom",
       },
     ],
-    image: "A_cabin.png",
+    image: "second_room.png",
   },
   thirdRoom: {
     title: "Welcome to the third room!",
@@ -73,12 +73,12 @@ const story = {
         destination: "deathRoom",
       },
     ],
-    image: "A_cabin.png",
+    image: "third_room.png",
   },
   fourthRoom: {
     title: "Welcome to the fourth room!",
     story:
-      "Almost at the end - Now imagine you have the ability to save either your best friend or your family! - which one will you choose?",
+      "Almost at the end - Now imagine you have the ability to save either your best friend or your family! - Which one will you choose?",
     choices: [
       {
         value: "Family",
@@ -89,7 +89,7 @@ const story = {
         destination: "fifthRoom",
       },
     ],
-    image: "A_cabin.png",
+    image: "fourth_room.png",
   },
   fifthRoom: {
     title: "Welcome to the fifth room!",
@@ -101,7 +101,7 @@ const story = {
         destination: "deathRoom",
       },
       {
-        value: "Pickles with cutlery",
+        value: "Pickles",
         destination: "finalRoom",
       },
       {
@@ -109,10 +109,10 @@ const story = {
         destination: "deathRoom",
       },
     ],
-    image: "A_cabin.png",
+    image: "fifth_room.png",
   },
   finalRoom: {
-    title: "You did it! - You made the right calls, or did you?",
+    title: "You did it! - You made the right calls, right?",
     story: "Go again?",
     choices: [
       {
@@ -124,7 +124,7 @@ const story = {
         destination: "deathRoom",
       },
     ],
-    image: "A_cabin.png",
+    image: "final_room.png",
   },
   deathRoom: {
     title: "Wrong decision!",
@@ -135,28 +135,6 @@ const story = {
         destination: "introRoom",
       },
     ],
-    image: "A_cabin.png",
-  },
-
-  sword: {
-    title: "You've saved us!",
-    story:
-      "Avarice the Angry Aardvark is defeated and Cute Puppistan is safe!!!! You're, like, so popular now.",
-    defaultDestination: "attack",
-  },
-  candleStick: {
-    title: "A candlestick, seriously?",
-    story:
-      "That's not even a real weapon. Avarice the Angry Aardvark easily defeated you. I really just don't understand why you would pick a candlestick over a sword.",
-    image: "A_cabin.png",
-    defaultDestination: "attack",
-  },
-  goHome: {
-    title: "Back at home!",
-    story:
-      "Yes, you're back in comfort of your own home. Don't worry about it, someone else took care of the problem. No need to at all to feel guilty...",
-    image: "video_game.png",
-    defaultDestination: "attack",
-    buttonText: "Let's try this again",
+    image: "death_room.png",
   },
 };
