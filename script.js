@@ -1,6 +1,9 @@
 const startButton = document.getElementById("startGameButton");
+const ambientSound = new Audio("./audio/ambient.mp3");
 
 startButton.addEventListener("click", () => {
+  ambientSound.play();
+  ambientSound.volume = 0.5;
   initGame();
 });
 
