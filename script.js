@@ -14,7 +14,7 @@ const initGame = () => {
   if (story[story.currentScene].image) {
     image = '<img id="chapterImg"/>';
   } else {
-    // if this is missing a wild undefiend appears
+    // if this is missing a wild undefined appears
     image = "";
   }
 
@@ -40,7 +40,7 @@ const renderInput = (choices) => {
   // choices is a array
   if (!choices) return "";
 
-  // if this is missing a wild undefiend appears
+  // if this is missing a wild undefined appears
   let input = "";
 
   // 'id' from input and 'for' from label need to be the same value to 'connect' them
